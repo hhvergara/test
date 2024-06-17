@@ -39,5 +39,5 @@ jobs:
         pytest src/tests/unit_tests/cp.py
     - name: Test coverage
       run: |
-        pytest --cov=src/tests/unit_tests/cp.py
+        pytest --cov=mge-service src/tests/unit_tests/cp.py
   
