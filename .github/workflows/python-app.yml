@@ -28,6 +28,9 @@ jobs:
         python -m pip install --upgrade pip
         pip install flake8 pytest pipenv pytest-cov
         if [ -f Pipfile ]; then pipenv install; fi
+    - name: Install dependencies 2
+      run: |
+        python -m pipenv install
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names
