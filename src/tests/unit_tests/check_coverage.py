@@ -28,5 +28,5 @@ def check_coverage(threshold):
         sys.exit(1)
 
 if __name__ == "__main__":
-    threshold = 80  # Adjust this threshold as needed
+    threshold = 99  # Adjust this threshold as needed
     check_coverage(threshold)
