@@ -9,6 +9,3 @@ class TestAbsFunction(unittest.TestCase):
 
     def test_zero(self):
         self.assertEqual(abs(0), 0)
-        
-if __name__ == "__main__":
-    unittest.main()
