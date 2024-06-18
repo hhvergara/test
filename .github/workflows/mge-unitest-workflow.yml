@@ -39,12 +39,7 @@ jobs:
         pipenv run pytest src/tests/unit_tests/cp.py
     - name: Test coverage
       run: |
-        pipenv run pytest --cov=src src/tests/unit_tests/cp.py
+        pipenv run pytest --cov=src src/tests/unit_tests/cp.py --cov-report=json:coverage.json
     - name: Check coverage threshold
       run: |
-        COVERAGE_THRESHOLD=80  # Adjust this threshold as needed
-        coverage=$(pipenv run pytest --cov=src src/tests/unit_tests/cp.py --cov-report=xml | grep -oP 'total="(\d+)"' | sed 's/[^0-9]*//g')
-        if [ "$coverage" -lt "$COVERAGE_THRESHOLD" ]; then
-          echo "Coverage is below threshold. Expected at least $COVERAGE_THRESHOLD%, but got $coverage%."
-          exit 1
-        fi
+        python src/tests/unit_tests/check_coverage.py
