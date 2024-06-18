@@ -43,3 +43,6 @@ jobs:
     - name: Check coverage threshold
       run: |
         python src/tests/unit_tests/check_coverage.py
+    - name: Check coverage threshold
+      run: |
+        python src/tests/unit_tests/launcher.py
