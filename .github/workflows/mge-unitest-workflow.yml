@@ -36,7 +36,13 @@ jobs:
         pipenv run flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pipenv run pytest src/tests/unit_tests/cp.py
+        pipenv run pytest src/tests/unit_tests/
     - name: Test coverage
       run: |
-        pipenv run pytest --cov=mge-service src/tests/unit_tests/cp.py
+        pipenv run pytest --cov=src src/tests/unit_tests/ --cov-report=json:coverage.json
+    - name: Check coverage threshold
+      run: |
+        pipenv run src/tests/unit_tests/check_coverage.py
+    - name: Check coverage threshold
+      run: |
+        pipenv run src/tests/unit_tests/launcher.py
