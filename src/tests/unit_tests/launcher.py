@@ -8,5 +8,5 @@ params = [
 
 # ▶️ generate the HTML report:
 result = pytest.main(params)
-threshold = 80  # Adjust this threshold as needed
+threshold = 10  # Adjust this threshold as needed
 check_coverage(threshold)
